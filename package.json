@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "install": "spago install",
+    "build": "spago build",
+    "test": "spago test",
+    "clean": "rimraf output && rimraf .pulp-cache",
+    "watch": "spago build --watch"
+  },
+  "devDependencies": {
+    "purescript": "^0.12.5",
+    "purescript-psa": "^0.5.0",
+    "purescript-suggest": "^2.2.0",
+    "rimraf": "^2.6.3",
+    "spago": "^0.8.3"
+  },
+  "dependencies": {}
+}
