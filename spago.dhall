@@ -13,6 +13,8 @@ You can edit this file as you like.
     , "foreign-generic"
     , "gen"
     , "psci-support"
+    , "quickcheck"
+    , "spec"
     ]
 , packages =
     ./packages.dhall

@@ -3,9 +3,7 @@ module Test.Main where
 import Prelude
 
 import Effect (Effect)
-import Effect.Console (log)
+import Test.Data.Avro.Types (describeAvroType)
 
 main :: Effect Unit
-main = do
-  log "🍝"
-  log "You should add some tests."
+main = describeAvroType
