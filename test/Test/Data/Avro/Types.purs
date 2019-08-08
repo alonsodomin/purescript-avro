@@ -25,8 +25,8 @@ describeAvroType :: Effect Unit
 describeAvroType = run [consoleReporter] do
   describe "avro-type" do
     describe "JSON serialization" do
-      it "decodes primitives" (traverse_ avroTypeDecodeTest avroPrims)
-      it "encodes primitives" (traverse_ avroTypeEncodeTest avroPrims)
+      it "decodes primitive schemas" (traverse_ avroTypeDecodeTest avroPrims)
+      it "encodes primitive schemas" (traverse_ avroTypeEncodeTest avroPrims)
 
   where avroTypeDecodeTest (Tuple typ input) =
           parseJson input `shouldEqual` Right typ
