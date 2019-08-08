@@ -117,32 +117,5 @@ let upstream =
 let overrides = {=}
 
 let additions = {=}
-  -- { quotient =
-  --     mkPackage
-  --       [ "proxy"
-  --       , "prelude"
-  --       , "quickcheck"
-  --       ]
-  --       "https://github.com/rightfold/purescript-quotient.git"
-  --       "v3.0.0"
-  -- , bytestrings =
-  --     mkPackage
-  --       [ "exceptions"
-  --       , "newtype"
-  --       , "effect"
-  --       , "arrays"
-  --       , "maybe"
-  --       , "quotient"
-  --       , "foldable-traversable"
-  --       , "leibniz"
-  --       , "prelude"
-  --       , "unsafe-coerce"
-  --       , "integers"
-  --       , "node-buffer"
-  --       , "quickcheck"
-  --       ]
-  --       "https://github.com/rightfold/purescript-bytestrings.git"
-  --       "v7.0.0"
-  -- }
 
 in  upstream // overrides // additions
