@@ -15,14 +15,15 @@ import Data.Either (Either(..))
 import Data.Traversable (traverse_)
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
+import Effect.Aff (launchAff_)
 import Test.QuickCheck (quickCheck)
 import Test.Spec (describe, it)
 import Test.Spec.Assertions (shouldEqual)
 import Test.Spec.Reporter.Console (consoleReporter)
-import Test.Spec.Runner (run)
+import Test.Spec.Runner (runSpec)
 
 describeAvroType :: Effect Unit
-describeAvroType = run [consoleReporter] do
+describeAvroType = launchAff_ $ runSpec [consoleReporter] do
   describe "avro-type" do
     describe "JSON serialization" do
       it "decodes primitives" (traverse_ avroTypeDecodeTest avroPrims)

@@ -460,7 +460,7 @@ parseFieldDefault (Map { values }) =
   caseJsonObject (Left "Not a map value") parseMap
   where parseMap obj = do
           parsedObj <- traverse (parseFieldDefault values) obj
-          tupled <- pure $ (Object.toUnfoldable parsedObj) :: Array (Tuple String (Value Type))
+          tupled <- pure $ ((Object.toUnfoldable parsedObj) :: Array (Tuple String (Value Type)))
           pure $ Value.Map (Map.fromFoldable tupled)
 
 parseFieldDefault t@(Record { fields }) =
